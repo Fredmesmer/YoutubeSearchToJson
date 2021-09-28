@@ -8,11 +8,6 @@ const puppeteer = require('puppeteer');
       'Accept-Language': 'en-US,en;q=0.9'
     });
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36');
-    await page.setViewport({
-      width: 1280,
-      height: 720,
-      deviceScaleFactor: 1,
-    });
     await page.goto('https://www.youtube.com/results?search_query='+process.argv[2]);
     const [button] = await page.$x('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string');
     if (button) {
@@ -37,7 +32,7 @@ const puppeteer = require('puppeteer');
       }
     }
     await links[index].getProperty('href').then(data => {lien = data['_remoteObject']['value'];});
-    
+
 
     selected = false
     for(let i = 0;i<links.length;i++){
@@ -49,7 +44,7 @@ const puppeteer = require('puppeteer');
     }
     await links[index+1].getProperty('innerText').then(data => {title = data['_remoteObject']['value'];});
     await links[index+2].getProperty('innerText').then(data => {artists = data['_remoteObject']['value'];});
-    
+
 
 
     let imaj = await page.$$('img');
