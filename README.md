@@ -12,4 +12,4 @@ You just have to call it in your shell with your nodejs with the text of your se
 ```PS
 node ytapi 'Search argument'
 ```
-Be careful with the space in your search string if you dont put between quotes.
+Be careful with the space in your search string if you dont put it between quotes.

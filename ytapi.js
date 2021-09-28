@@ -37,7 +37,7 @@ const puppeteer = require('puppeteer');
     selected = false
     for(let i = 0;i<links.length;i++){
       await links[i].getProperty('innerText').then(data => {title = data['_remoteObject']['value'];});
-      if(title==="4:38\nNOW PLAYING" && selected === false){
+      if(title.endsWith("NOW PLAYING") && selected === false){
         index = i;
         selected = true
       }
