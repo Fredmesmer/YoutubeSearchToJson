@@ -1,6 +1,7 @@
 var fs = require('fs')
 const puppeteer = require('puppeteer');
 
+
 (async () => {
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
@@ -13,15 +14,16 @@ const puppeteer = require('puppeteer');
     if (button) {
         await button.click();
     }
-
-
     const links = await page.$$('a');
+
+
     let lien;
     let title;
     let artists;
     let imglien;
     let i;
     let selected;
+
 
     selected = false
     for(i = 0;i<links.length;i++){

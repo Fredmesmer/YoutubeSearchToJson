@@ -12,7 +12,7 @@ You just have to call it in your shell with your node.js with the text of your s
 ```PS
 node ytapi 'Search argument'
 ```
-Be careful with the space in your search string if you don't put it between quotes.
+Be careful with the space in your search string if you don't put it between quotes, or use `ytapi_argathered.js`.
 <br>
 It returns a json file with the title of the video, the name of the channel, the link of the video and the thumbnail.
 
